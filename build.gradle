@@ -19,8 +19,8 @@ openApiGenerate {
 	inputSpec = "$rootDir/src/main/resources/api/openapi.yaml"
 	outputDir = "$buildDir/generated/openapi"
 
-	apiPackage = 'com.example.estore.api'
-	modelPackage = 'com.example.estore.model'
+	apiPackage = 'com.grid.estore.api'
+	modelPackage = 'com.grid.estore.model'
 
 	configFile = "$rootDir/src/main/resources/api/config.json"
 
