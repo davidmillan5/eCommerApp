@@ -1,0 +1,19 @@
+{
+  "library": "spring-boot",
+  "dateLibrary": "java21",
+  "hideGenerationTimestamp": true,
+  "modelPackage": "com.grid.eCommerce.api.model",
+  "apiPackage": "com.grid.eCommerce.api",
+  "invokerPackage": "com.grid.eCommerce.api",
+  "serializableModel": true,
+  "useTags": true,
+  "useGzipFeature" : true,
+  "hateoas": true,
+  "unhandledException": true,
+  "useSpringBoot4": true,
+  "useSwaggerUI": true,
+  "importMappings": {
+    "ResourceSupport":"org.springframework.hateoas.RepresentationModel",
+    "Link": "org.springframework.hateoas.Link"
+  }
+}
