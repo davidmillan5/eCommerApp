@@ -14,15 +14,26 @@ java {
 	}
 }
 
+
+
 openApiGenerate {
 	generatorName = 'spring'
-	inputSpec = "$rootDir/src/main/resources/api/openapi.yaml"
-	outputDir = "$buildDir/generated/openapi"
 
-	apiPackage = 'com.grid.estore.api'
-	modelPackage = 'com.grid.estore.model'
+	inputSpec = "$rootDir/src/main/resources/api/openapi.yaml"
+	outputDir = "$buildDir/swagger-code-eStore"
+
+	apiPackage = 'com.grid.eCommerce.api'
+	modelPackage = 'com.grid.eCommerce.model'
+	invokerPackage = 'com.grid.eCommerce'
 
 	configFile = "$rootDir/src/main/resources/api/config.json"
+
+	configOptions = [
+			interfaceOnly: 'true',
+			useTags: 'true',
+			useSpringBoot4: 'true',
+			skipDefaultInterface: 'true'
+	]
 
 	typeMappings = [
 			URI: 'URI'
@@ -32,16 +43,21 @@ openApiGenerate {
 			URI: 'java.net.URI'
 	]
 
-	ignoreFileOverride = "$rootDir/src/main/resources/api/.openapi-generator-ignore"
+	ignoreFileOverride =
+			"$rootDir/src/main/resources/api/.openapi-generator-ignore"
 }
+
+
+
 
 sourceSets {
 	main {
 		java {
-			srcDir "$buildDir/generated/openapi/src/main/java"
+			srcDir "$buildDir/swagger-code-eStore/src/main/java"
 		}
 	}
 }
+
 
 tasks.named('compileJava') {
 	dependsOn tasks.named('openApiGenerate')
