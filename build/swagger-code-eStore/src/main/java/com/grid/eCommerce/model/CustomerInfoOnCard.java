@@ -1,0 +1,112 @@
+package com.grid.eCommerce.model;
+
+import java.net.URI;
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import org.springframework.lang.Nullable;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.io.Serializable;
+import java.time.OffsetDateTime;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+import org.springframework.hateoas.RepresentationModel;
+
+import java.util.*;
+import jakarta.annotation.Generated;
+
+/**
+ * Customer information required for payment processing
+ */
+
+@Schema(name = "CustomerInfoOnCard", description = "Customer information required for payment processing")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", comments = "Generator version: 7.26.0")
+public class CustomerInfoOnCard extends RepresentationModel<CustomerInfoOnCard>  implements Serializable {
+
+  private static final long serialVersionUID = 1L;
+
+  private @Nullable String firstName;
+
+  private @Nullable String lastName;
+
+  public CustomerInfoOnCard firstName(@Nullable String firstName) {
+    this.firstName = firstName;
+    return this;
+  }
+
+  /**
+   * Customer first name
+   * @return firstName
+   */
+  
+  @Schema(name = "firstName", description = "Customer first name", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("firstName")
+  public @Nullable String getFirstName() {
+    return firstName;
+  }
+
+  @JsonProperty("firstName")
+  public void setFirstName(@Nullable String firstName) {
+    this.firstName = firstName;
+  }
+
+  public CustomerInfoOnCard lastName(@Nullable String lastName) {
+    this.lastName = lastName;
+    return this;
+  }
+
+  /**
+   * Customer last name
+   * @return lastName
+   */
+  
+  @Schema(name = "lastName", description = "Customer last name", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("lastName")
+  public @Nullable String getLastName() {
+    return lastName;
+  }
+
+  @JsonProperty("lastName")
+  public void setLastName(@Nullable String lastName) {
+    this.lastName = lastName;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    CustomerInfoOnCard customerInfoOnCard = (CustomerInfoOnCard) o;
+    return Objects.equals(this.firstName, customerInfoOnCard.firstName) &&
+        Objects.equals(this.lastName, customerInfoOnCard.lastName);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(firstName, lastName);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CustomerInfoOnCard {\n");
+    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(@Nullable Object o) {
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
+  }
+}
+
