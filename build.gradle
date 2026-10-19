@@ -73,8 +73,12 @@ repositories {
 
 dependencies {
 	implementation 'org.projectlombok:lombok:1.18.48'
+	implementation 'org.springframework.boot:spring-boot-jpa:4.1.1'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:4.1.1'
+	implementation 'org.flywaydb:flyway-core:13.10.0'
 	implementation 'io.swagger.core.v3:swagger-models:2.2.54'
 	compileOnly 'io.swagger.core.v3:swagger-annotations:2.2.54'
+	runtimeOnly 'com.h2database:h2:2.5.252'
 	implementation 'org.springframework.boot:spring-boot-starter-validation:4.1.1'
 	implementation 'org.openapitools:jackson-databind-nullable:0.2.12'
 
